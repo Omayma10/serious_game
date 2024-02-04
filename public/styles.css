@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'yugioh_font';
+    src: url('assets/fonts/yugioh_font1.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'yugioh_font', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-size: cover;
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your preference */
+}
+
+.game-area {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+}
+
+.card-display-area {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.player-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.monster-zone,
+.graveyard,
+.deck-zone {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+    /* For positioning the deck's image */
+}
+
+.deck-count {
+    position: absolute;
+    top: 5px; /* Adjust based on your preference */
+    right: 5px; /* Adjust based on your preference */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 14px; /* Adjust based on your preference */
+}
+
+.deck-zone img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.card-display-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#displayed-card {
+    width: 275px;
+    /* Bigger size for the displayed card */
+    margin-bottom: 10px;
+}
+
+.card-specs {
+    width: 200px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'yugioh_font', sans-serif;
+    display: flex;
+    justify-content: center;
+    background-size: 239%;
+}
+
+.card-display-area {
+    flex-basis: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for separation */
+    margin-right: 2%; /* Separation between card display and game area */
+    border-right: 2px solid #955227; /* Visible separation line */
+    height: 100vh; /* Full viewport height */
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    max-width: 1200px; /* Adjust based on your preference */
+    margin-right: 2%;
+}
+
+.game-area {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+}
+
+.player1-field, .player2-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player1-field{
+    transform: scale(-1, -1);
+}
+
+.life-container {
+    width: 80%;
+    background-color: #555; /* Background of the life bar, visible when life decreases */
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden; /* Ensures the inner bar stays within the rounded corners */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Spacing between avatar/name and life bar */
+}
+
+.player-avatar {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 5px; /* Spacing between avatar and player name */
+}
+
+.player-name {
+    color: white; /* Adjust color as needed */
+    font-size: 16px; /* Adjust size as needed */
+    /* Apply font family if specific one is desired */
+}
+
+.life-bar {
+    height: 30px;
+    line-height: 30px; /* Centers the text vertically */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out; /* Smooth transition for life point changes */
+}
+
+.life-bar.opponent {
+    background-color: #9ada9a; /* Different color for opponent for clarity */
+    background: linear-gradient(to right, #9ada9a 0%, rgb(97, 184, 255) 100%);
+    font-size: 26px;
+    transform: scale(-1, -1);
+}
+
+.life-bar.player {
+    background-color: #9ada9a; /* Different color for player for clarity */
+    background: linear-gradient(to right,  rgb(97, 184, 255) 0%,  #9ada9a 100%);
+    font-size: 26px;
+}
+
+.monster-zone {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    position: relative; /* Allows for absolute positioning of children */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Background color if needed */
+}
+
+.monster-zone img {
+    width: 100%; /* Adjust based on your preference */
+    height: 100%;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.graveyard {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    position: relative; /* Allows for absolute positioning of children */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Background color if needed */
+}
+
+.graveyard img {
+    width: 100%; /* Adjust based on your preference */
+    height: 100%;
+    filter: grayscale();
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.zone-text {
+    position: absolute;
+    bottom: 0px; /* Position the text at the top of the zone */
+    color: #ffffff;
+    font-size: 18px; /* Adjust based on your preference */
+    text-shadow: 0 0 1em black, 0 0 0.2em black;
+    text-align: center;
+    z-index: 2; /* Ensures text is above the image */
+    width: 100%; /* Ensure text is centered and within the zone bounds */
+    padding: 7px 0; /* Small padding to help separate text from the card edges */
+}
+
+.game-bar.opponent{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.game-bar.player{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.player-hand {
+    width: 100%;
+    height: 26%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5); /* Optional */
+    border-radius: 15px;
+    gap: 10px;
+    align-items: center;
+}
+
+.hand-card {
+    height: 88%;
+    margin: 0 5px;
+    border-radius: 4px;
+}
